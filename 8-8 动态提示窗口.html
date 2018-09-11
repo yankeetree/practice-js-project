@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>8-8 动态提示窗口</title>
+    <link type="text/css" href="css/css1.css" rel="stylesheet"/>
+    <script type="text/javascript">
+        var oPopup;
+        var winWidth=220,winHeight=140;
+        var popup_dir;
+        function initPopup(){
+            oPopup=window.open("","_popup","scrollbars=no,status=no,menubar=no,resizable=no,titleabr=no,location=no");
+            var oBody=oPopup.document.body;
+            oBody.style.backgroundColor="lightyellow";
+            oBody.style.borderStyle="none";
+        }
+        function showInfo(str) {
+            initPopup();
+            oPopup.document.body.innerHTML=str;
+            popup_dir=-1;
+            showPopup(winHeight-100);
+        }
+        function showPopup(y) {
+            oPopup.resizeTo(winWidth,winHeight-y);
+            oPopup.moveTo(screen.availWidth-winWidth,screen.availHeight-winHeight+y);
+            y+=popup_dir;
+            if(y>winHeight-100&&popup_dir>0){
+                oPopup.close();
+                return;
+            }else if(y<0&&popup_dir<0){
+                popup_dir=2;
+                setTimeout("showPopup(0);",2000);
+                return;
+            }else{
+                setTimeout("showPopup("+y+");",2);
+            }
+        }
+    </script>
+</head>
+<body style="overflow: auto">
+    <input type="button" value="测试提示效果" onclick="showInfo('这里是提示信息');"/>
+</body>
+</html>

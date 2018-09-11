@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>8-7 定时函数的上下文环境测试</title>
+    <script>
+        function do_onclick(){
+            alert(this.value);
+            setTimeout(timer,500);
+        }
+        function timer(){
+            alert(this.value);
+        }
+        window.onload=function () {
+            document.getElementById("cmd01").onclick=do_onclick;
+        }
+    </script>
+</head>
+<body style="overflow: auto">
+    <input type="button" value="点我" id="cmd01"/>
+</body>
+</html>
