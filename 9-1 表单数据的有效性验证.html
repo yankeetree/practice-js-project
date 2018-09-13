@@ -26,15 +26,55 @@
                     case "email":
                     case "required":
                         if(REG_BALDATE[strType].test(strValue)){
-                            displayErrMsg()
+                            displayErrMsg(eles[i],"&nbsp;");
+                        }else{
+                            if(!objFirstInput)objFirstInput=eles[i];
+                            err++;
+                            displayErrMsg(eles[i],eles[i].msg);
                         }
+                        break;
+                    case "repass":
+                        obj=document.getElementById(eles[i].id.replace(/^re\_/i,""));
+                        if(!obj)continue;
+                        if(obj.value!=strValue){
+                            if(!objFirstInput)objFirstInput=eles[i];
+                            err++;
+                            displayErrMsg(eles[i],eles[i].msg);
+
+                        }else{
+                            displayErrMsg(eles[i],"&nbsp;");
+                        }
+                        break;
+
                 }
 
             }
+            if(err>0){
+                objFirstInput.focus();
+                return false;
+            }else{
+                alert("可以提交，请等待");
+                return true;
+            }
+        }
+
+        function displayErrMsg(ipt,strMsg){
+            var obj;
+            obj=ipt.parentNode.nextSibling;
+            obj.innerHTML=strMsg;
         }
     </script>
 </head>
-<body>
-
+<body style="overflow: auto">
+注册测试页面<br/>
+<form onsubmit="return chkform(this)">
+    <table>
+        <tr>
+            <td>姓名：</td>
+            <td><input name="txtName"  verify="chn" msg="姓名必须是中文"></td>
+            <td class="red"><!--这一栏被用来显示提示信息--></td>
+        </tr>
+    </table>
+</form>
 </body>
 </html>
