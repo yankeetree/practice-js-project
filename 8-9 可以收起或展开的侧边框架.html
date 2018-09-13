@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>8-9 可以收起或展开的侧边框架</title>
+    <link type="text/css" href="css/css2.css" rel="stylesheet"/>
+    <script type="text/javascript">
+        function resizeFrame() {
+            var frmElement,frm,obj;
+            frmElement=document.getElementsByTagName("frameset")[0];
+            frm=window.frames[0];
+            obj=frm.document.getElementById("hutia");
+            if(obj.innerHTML=="&lt;"){
+                frmElement.cols="17,*";
+                obj.innerHTML="&gt;"
+            }else{
+                frmElement.cols="20%,*";
+                obj.innerHTML="&lt;"
+            }
+        }
+
+        window.onload=function(){
+            var frm;
+            frm=window.frames[0];
+            frm.document.write(document.getElementsByTagName("style")[0].outerHTML);
+            frm.document.write("<a href=\"javascript:void(top.resizeFrame());\") id=\"collapseButton\" hideFocus=\"yes\">");
+        }
+    </script>
+</head>
+<frame cols="20%,*" frameBorder="0">
+    <frame></frame>
+    <frame></frame>
+</frameset>
+</html>
