@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>9-2 判断用户输入的Email是否合法</title>
+    <link type="text/css" href="css/css1.css" rel="stylesheet"/>
+    <script type="text/javascript">
+        function check(){
+            var str,result1,result2,timecos1,timecos2,timer,msg;
+            str=document.getElementById("txtemail").value;
+            timecos1=(new Date()).getTime();
+            for(var i=0;i<1000;i++) {
+                validateeb(str);
+            }
+                timecos1=(new Date()).getTime().timecos1;
+                timecos2=(new Date()).getTime();
+                for(var i=0;i<1000;i++){
+                    validate(str);
+                }
+                timecos2=(new Date()).getTime().timecos2;
+                msg="输入的Email为："+str+"\r\n";
+                msg+="用正则测试结果为：\t"+(validateeb(str)?"通过":"不通过")+",运算1000遍耗时"+timecos1+"毫秒.\r\n";
+                msg+="不用正则测试的结果为：\t"+(validate(str)?"通过":"不通过")+",运算1000消耗时"+timecos2+"毫秒.\r\n";
+                alert(msg);
+
+        }
+
+        function validateeb(str){
+
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>
