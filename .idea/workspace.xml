@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="21393667-a516-4c07-bb15-079366aed361" name="Default" comment="" />
+=======
+<<<<<<< HEAD
+    <list default="true" id="21393667-a516-4c07-bb15-079366aed361" name="Default" comment="" />
+=======
+    <list default="true" id="21393667-a516-4c07-bb15-079366aed361" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/9-1 表单数据的有效性验证.html" afterPath="$PROJECT_DIR$/9-1 表单数据的有效性验证.html" />
+      <change beforePath="$PROJECT_DIR$/css/css1.css" afterPath="$PROJECT_DIR$/css/css1.css" />
+    </list>
+>>>>>>> 27ff78998e3869300da68f9f9c1502d66dc770be
+>>>>>>> 92d8ea601a7d21a38acedbc4635a736aea9e191f
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -87,9 +98,19 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
+<<<<<<< HEAD
   <component name="ProjectFrameBounds">
+=======
+<<<<<<< HEAD
+  <component name="ProjectFrameBounds">
+    <option name="x" value="25" />
+    <option name="y" value="55" />
+=======
+  <component name="ProjectFrameBounds" extendedState="1">
+>>>>>>> 92d8ea601a7d21a38acedbc4635a736aea9e191f
     <option name="x" value="176" />
     <option name="y" value="153" />
+>>>>>>> 27ff78998e3869300da68f9f9c1502d66dc770be
     <option name="width" value="1031" />
     <option name="height" value="639" />
   </component>
@@ -164,16 +185,39 @@
       <updated>1536670851047</updated>
       <workItem from="1536670853053" duration="3737000" />
       <workItem from="1536761836792" duration="679000" />
+<<<<<<< HEAD
+      <workItem from="1536853490401" duration="1758000" />
+=======
       <workItem from="1536853490401" duration="1664000" />
+<<<<<<< HEAD
       <workItem from="1536895874567" duration="5537000" />
+=======
+      <workItem from="1536895874567" duration="5466000" />
+>>>>>>> 27ff78998e3869300da68f9f9c1502d66dc770be
+>>>>>>> 92d8ea601a7d21a38acedbc4635a736aea9e191f
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="11617000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="176" y="153" width="1031" height="639" extended-state="0" />
+=======
+<<<<<<< HEAD
+    <option name="totallyTimeSpent" value="6174000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="25" y="55" width="1031" height="639" extended-state="0" />
+=======
+    <option name="totallyTimeSpent" value="11546000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="176" y="153" width="1031" height="639" extended-state="1" />
+    <editor active="true" />
+>>>>>>> 27ff78998e3869300da68f9f9c1502d66dc770be
+>>>>>>> 92d8ea601a7d21a38acedbc4635a736aea9e191f
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24926108" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />

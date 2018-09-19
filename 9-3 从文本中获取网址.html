@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>9-3 从文本中获取网址</title>
+    <link rel="stylesheet" type="text/css" href="css/css1.css"/>
+    <script type="text/javascript">
+        function parseURL(){
+            var str,re;
+            str=$("t1").value;
+            re=str.match(/http:\/\/[^\t\r\n]+/gi);
+            if(re){
+                $("t2").value=re.join("\r\n\r\n");
+            }else{
+                $("t2").value="没有网址";
+            }
+        }
+
+        function $(str){
+            return document.getElementById(str);
+        }
+    </script>
+</head>
+<body style="overflow: auto">
+    <b>请输入需分析的文本</b>
+<textarea id="t1"></textarea>
+<input type="button" value="获取网址" onclick="parseURL()">
+<br/>
+<b>网址列表</b>
+<textarea id="t2"></textarea>
+</body>
+</html>
