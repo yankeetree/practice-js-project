@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>9-5 利用正则式实现加密解密</title>
+    <link type="text/css" rel="stylesheet" href="css/css1.css"/>
+    <script type="text/javascript">
+        function encode() {
+            $("t2").vakue=escape($("t1").value.replace(/./,replace_core));
+            $("t3").value=escape($("t1").value);
+
+        }
+        function decode() {
+            $("t1").value=unescape($("t2").value).replace(/./,replace_core);
+            $("t3").value=escape($("t1").value);
+        }
+        function replace_core(chr) {
+            var chr_code,chr_index;
+            chr_code=chr.charCodeAt(0);
+            chr_index=arguments[arguments.length-2];
+            return String.fromCharCode(chr_code^chr_index);
+        }
+        function $(str) {
+            return document.getElementById(str);
+        }
+    </script>
+</head>
+<body style="overflow: auto">
+    <table width="100%">
+        <tr>
+            <td><b>明文：</b></td>
+            <td rowspan="2"></td>
+            <input type="button" value="加密" onclick="encode()">
+            <br/>
+            <input type="button" value="解密" onclick="decode()">
+        </tr>
+        <tr>
+            <td><b>密文：</b></td>
+            <td><b>escape编码：</b></td>
+        </tr>
+        <tr>
+            <td><textarea id="t1"></textarea></td>
+            <td><textarea id="t2"></textarea></td>
+            <td><textarea id="t3"></textarea></td>
+        </tr>
+    </table>
+</body>
+</html>
