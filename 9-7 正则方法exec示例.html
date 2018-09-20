@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>9-7正则对象的exec方法示例</title>
+    <link type="text/css" href="css/css1.css" rel="stylesheet"/>
+    <script type="text/javascript">
+        var src="The quick brown fox jumps over a lazy dog.";
+        var re=/\w+/g;
+        var arr;
+        while((arr=re.exec(src))!=null){
+            document.write("<tr><td>自位置："+arr.index+"至"+arr.lastIndex+",</td><td>内容为\""+arr+"\"</td></tr>")
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>
