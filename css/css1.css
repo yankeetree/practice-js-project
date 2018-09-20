@@ -10,4 +10,27 @@
 }
 body{
     background-color: buttonface;
+    border-width: 200px;
+    margin:0px;
+    padding:5px;
+
+}
+textarea{
+    border-width:1px;
+    width:200px;
+    height:100px;
+    margin-botton:5px;
+}
+input{
+    border-width:1px;
+    margin-bottom: 5px;
+}
+.output{
+    border:1px inset buttonface;
+    width:200px;
+    height:100px;
+    margin-botton:5px;
+    bachground-color:white;
+    overflow:auto;
+    padding:5px;
 }
