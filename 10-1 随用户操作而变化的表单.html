@@ -18,7 +18,7 @@
             //更改按钮文字
             document.getElementById("input_show_upload").value="我要上传头像";
             //绑定onclick事件
-            document.getElementById("input_div_upload").onclick=hide_upload;
+            document.getElementById("input_show_upload").onclick=show_upload;
         }
 
         function upload_image_preview() {
@@ -27,11 +27,74 @@
             if(!img_path.match(/\.(jpg|gif|tif|png)$/i)) return;
             document.getElementById("span_image_preview").innerHTML="<img height=\"50px\" src=\""+img_path+"\">";
         }
+        function check_status() {
+            if(document.getElementById("input_use_other_account").checked){
+                document.getElementById("input_user_name").disabled=false;
+                document.getElementById("input_user_pass").disabled=false;
+                document.getElementById("input_user_name").value="请输入姓名";
+                document.getElementById("input_user_pass").value="";
+                document.getElementById("input_user_name").focus();
+                document.getElementById("input_user_name").select();
+            }else{
+                document.getElementById("input_user_name").disabled=true;
+                document.getElementById("input_user_pass").disabled=true;
+                document.getElementById("input_user_name").value="默认用户名";
+                document.getElementById("input_user_pass").value="something";
+            }
+        }
+
+        function check_name() {
+            document.getElementById("input_use_other_account").checked=false;
+            check_status();
+        }
+
+        function create_city() {
+            if($("select_province").value=="jiangsu"){
+                $("span_city").innerHTML="<select><option>南京</option><option>苏州</option></select>";
+            }else{
+                $("span_city").innerHTML="<select><option>广州</option><option>深圳</option></select>";
+            }
+        }
+
+        function check_keydown() {
+            if(event.ctrlKey&&event.keyCode==13){
+                //判断按键，13代表enter
+                $("form1").submit();//提交表单
+            }
+        }
+
+        function $(str) {
+            return document.getElementById(str);
+        }
 
 
     </script>
 </head>
-<body>
-
+<body style="overflow: auto">
+<form id="form1">
+    <input id="input_show_upload" type="button" onclick="show_upload()" value="我要上传头像"><br>
+    <div id="div_upload" style="display: none">请选取头像文件：<input id="input_image_file" type="file"
+    onchange="upload_image_preview()"><br>头像预览：<span id="span_image_preview"></span> </div>
+    <hr>
+    使用其他账户登录：<input id="input_use_other_account" type="checkbox"
+    onclick="check_status()"><br>
+    用户名：<input id="input_user_name" value="默认用户名" onchange="check_name()" disabled>
+    密码：<input id="input_user_pass" type="password" value="something" disabled><br>
+    <hr>
+    你来自：
+    <select id="select_province" onchange="create_city()">
+        <option value="jiangsu">江苏</option>
+        <option value="guangdong">广东</option>
+    </select>
+    <span id="span_city">
+        <select>
+            <option>南京</option>
+            <option>苏州</option>
+        </select>
+    </span><br>
+    <hr>
+    个人简介：<br>
+    <textarea onkeydown="check_keydown()" cols="80" rows="10">按住ctrl+enter提交本表单</textarea>
+</form>
 </body>
 </html>
