@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>10-3 键盘鼠标事件测试</title>
+</head>
+<body style="overflow: auto">
+<textarea cols="50" rows="10" onmousedown="this.value+='\r\n'+event.type"
+onmouseup="this.value+='\r\n'+event.type" onmouseover="this.value+='\t\n'+event.type"
+ onmouseout="this.value+='\t\n'+event.type" onkeydown="this.value+='\r\n'+event.type"
+ onkeyup="this.value+='\r\n'+event.type"
+ onkeypress="this.value+='\r\n'+event.type">
+    
+</textarea>
+</body>
+</html>
