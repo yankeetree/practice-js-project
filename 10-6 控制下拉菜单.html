@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>10-6 控制下拉菜单</title>
+    <link href="css/css1.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript">
+        function add_to_select() {
+            var op=new Option();
+            op.innerHTML=(new Date()).toLocaleString();
+            select1.appendChild(op);
+        }
+
+        function del_select() {
+            if(select1.options.length<1){return;}
+            var op=select1.options[select1.selectedIndex];
+            select1.removeChild(op);
+        }
+
+        function select_next() {
+            if(select1.options.length<1||select1.selectedIndex>select1.options.length-2){return;}
+            select1.options[select.selectedIndex+1].selected=true;
+            //选中下一个项目
+        }
+    </script>
+</head>
+<body style="overflow: auto">
+<select id="select1"></select><br>
+    <input type="button" onclick="add_to_select()" value="添加">
+    <input type="button" onclick="del_select()" value="shanchu">
+    <input type="button" onclick="select_next()" value="xuanzhong">
+</body>
+</html>

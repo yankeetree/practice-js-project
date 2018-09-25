@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>11-1 复杂的跑马灯</title>
+    <link rel="stylesheet" href="css/css1.css" type="text/css">
+    <script type="text/javascript">
+        function init() {
+            initMg($("mp"));
+            $("mp").start();
+        }
+        function initMp(obj) {
+            var objs;
+            //自定义跑马灯的属性
+            obj.currentItem=-1;
+            obj.loopDelay=50;
+            obj.loopItems=new Array();
+            obj.loopTimer=null;
+            obj.speedX=2;
+            obj.speedY=2;
+            //定义跑马灯对象的自定义方法
+            obj.loop=mp_loop;
+            obj.start=mp_startLoop;
+            obj.stop=mp_stopLoop;
+            //自定义跑马灯的对象事件
+            obj.onmouseover=function () {
+                this.stop();
+            }
+            obj.onmouseout=function () {
+                this.loop();
+            }
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

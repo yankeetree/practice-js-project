@@ -34,3 +34,15 @@ input{
     overflow:auto;
     padding:5px;
 }
+#mp{
+    width:220px;
+    height:40px;
+    line-height:20px;
+    overflow: hidden;
+    border:1px solid black;
+}
+#mp div{
+    position:absolute;
+    width:220px;
+    padding:0px 10px;
+}
