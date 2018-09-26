@@ -1,15 +1,17 @@
 *{
-    font-size: 12px;
+    font-size: 10px;
     font-family:宋体,Arial;
     font-weight:normal;
-    color:#333;
+
+
 }
 .red{
     color:red;
     font-weight: bold;
 }
 body{
-    background-color: buttonface;
+    overflow: auto;
+    /*background-color: buttonface;*/
     border-width: 200px;
     margin:0px;
     padding:5px;
@@ -34,15 +36,16 @@ input{
     overflow:auto;
     padding:5px;
 }
-#mp{
+#mp {
     width:220px;
     height:40px;
     line-height:20px;
-    overflow: hidden;
+    overflow:hidden;
     border:1px solid black;
 }
 #mp div{
     position:absolute;
     width:220px;
     padding:0px 10px;
+
 }
