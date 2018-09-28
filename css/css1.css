@@ -49,3 +49,27 @@ input{
     padding:0px 10px;
 
 }
+
+#tools{
+    background-color:buttonface;
+    border-bottom: 2px solid buttonshadow;
+    height:24px;
+    line-height:24px;
+    padding:0px 5px;
+}
+#huatia{
+    padding:10px;
+}
+#huatia *{
+    font-size:1em;
+    margin:0px;
+    padding:0px;
+}
+#huatia h3{
+    font-size:1.5em;
+    line-height:2em;
+    font-weight:bolder;
+}
+#huaita div{
+    text-indent:2em;
+}
