@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>11-4 换肤效果</title>
+    <link rel="stylesheet" type="text/css" href="css/css1.css"/>
+    <style name="skin"disabled>
+        body{
+            background-image:url(img/11-401.jpg);
+            color:white;
+        }
+        .ipt_text{
+            border-color:red;
+            color:gold;
+        }
+        .ipt_button{
+            background-image:url(img/11-401.jpg) ;
+            color: #ffffff;
+            font-weight:bold;
+            font-size:16px;
+        }
+    </style>
+    <style name="skin"disabled>
+        body{
+            background-image:url(img/11-402.jpg);
+            color:white;
+        }
+        .ipt_text{
+            border-color:red;
+            color:gold;
+        }
+        .ipt_button{
+            background-image:url(img/11-402.jpg) ;
+            color: #ffffff;
+            font-weight:bold;
+            font-size:16px;
+        }
+    </style>
+    <script type="text/javascript">
+        function setSkin(id) {
+            var ss=document.styleSheets;
+            for(var i=1;i<ss.length;i++){
+                ss[i].disabled=(id!=i);
+            }
+        }
+    </script>
+</head>
+<body>
+<div  id="tools">
+    请选择皮肤：
+    <select onchange="setSkin(this.value)">
+        <option value="1">lan</option>
+        <option value="2">hjong</option>
+    </select>
+</div>
+<div id="huatia">
+    <h3>a这是标题</h3>
+    <div>alhsddkjhbrfajskdlfbaskjdgtrfhjagsdjkhfgbahsdj</div>
+    <input type="text" value="测试用文本框" class="ipt_text"/>
+    <input type="button" value="测试按钮" class="ipt_button"/>
+</div>
+</body>
+</html>
