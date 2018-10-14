@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>11-6 绝对定位与相对定位</title>
+    <!--<link rel="stylesheet" href="css/css1.css" type="text/css"/>-->
+    <style>
+        *{
+            font-size:12px;
+            font-family:宋体,Arial;
+        }
+        body{
+            overflow: auto;
+            border-style:none;
+            margin:0px;
+            padding:0px;
+        }
+        #abs{
+            position:absolute;
+            left:10px;
+            top:10px;
+            width:150px;
+            height:150px;
+            background-color:buttonface;
+            padding:10px;
+        }
+        .tools{
+            position:absolute;
+            top: 180px;
+            left: 10px;
+        }
+        #rel{
+            position:relative;
+            left:170px;
+            top:40px;
+            width: 150px;
+            height: 120px;
+            background-color: buttonface;
+            padding: 10px;
+        }
+    </style>
+    <script type="text/javascript">
+        function logEvent() {
+            $("ipt_x").value=event.x;
+            $("ipt_y").value=event.y;
+            $("ipt_x2").value=event.clientX;
+            $("ipt_y2").value=event.clientY;
+        }
+
+        function $(str) {
+            return document.getElementById(str);
+        }
+        window.onload=function () {
+            document.onmousemove=logEvent;
+        }
+    </script>
+</head>
+<body>
+    <div id="abs">绝对定位</div>
+    <div id="rel">相对定位</div>
+    <div class="tools">
+        event.x<input id="ipt_x" size="15">
+        event.y<input id="ipt_y" size="15">
+        <br/>
+        event.clientX<input id="ipt_x2" size="9">
+        event.clientY<input id="ipt_y2" size="9">
+    </div>
+</body>
+</html>

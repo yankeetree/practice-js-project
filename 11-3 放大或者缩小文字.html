@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>11-3 放大或者缩小文字 </title>
+    <link rel="stylesheet" type="text/css" href="css/css1.css"/>
+    <script type="text/javascript">
+        function setFontSize(i){
+            $("huatia").style.fontSize=i+"px";
+        }
+        function $(str){
+            return document.getElementById(str);
+        }
+    </script>
+</head>
+<body>
+<div id="tools">
+    请选择文字大小：
+    <select onchange="setFontSize(this.value)">
+        <option value="10">小</option>
+        <option value="12">中</option>
+        <option value="14">大</option>
+        <option value="16">特大</option>
+    </select>
+</div>
+<div id="huatia">
+    <h3>这是标题</h3>
+    <div>ds,mfjnakjhbdbsjbfamjhldsbmjnfbna s,dFasdjhgfhgkasdhjbfj</div>
+</div>
+</body>
+</html>
