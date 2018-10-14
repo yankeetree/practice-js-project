@@ -15,5 +15,25 @@ body{
 
 }
 #lst_hidden,#lst_show{
-    width:
+    width:200px;
+    height:180px;
+}
+#div_preview{
+    background-color:white;
+    border:2px inset buttonface;
+    height:36px;
+    margin:5px 10px;
+}
+#div_preview a{
+    color:navy;
+    text-decoration:none;
+    height:26px;
+    line-height:26px;
+    margin:0px 3px;
+    padding:2px 15px 0px 15px;
+    border:1px solid white;
+}
+#div_preview a:hover{
+    border:1px solid#555;
+    background-color:#d9e9f9;
 }

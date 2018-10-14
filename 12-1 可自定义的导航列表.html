@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>12-1 可自定义的导航列表</title>
+    <script type="text/javascript">
+        var navList=[
+            "Google","http://www.google.cn",
+            "Baidu","http://www.baidu.com",
+            "网易","http://www.163.com",
+            "蓝色港湾","http://www.blueidea.com",
+            "msdn","http://msdn.microsoft.com"
+        ];
+        //添加新项目
+        function addItem() {
+            for(var i=0;i<$("lst_hidden").options.length;i++){
+                if($("lst_hidden").options[i].selected){
+                    $("div_preview").add($("lst_hidden").options[i].text/*,$("lst_hidden").options.value*/);
+                    $("lst_show").appendChild($("lst_hidden").options[i]);
+                    i--;
+                }
+            }
+        }
+        //删除项目
+        function delItem() {
+            for(var i=0;i<$("lst_show").options.length;i++){
+                if($(lst_show).options[i].selected){
+                    $("div_preview").del(i);
+                    $("lst_hidden").appendChild($("lst_show").options[i]);
+                    i--;
+                }
+            }
+        }
+        //项目下移
+        function downItem() {
+            if($("lst_show").options[$("lst_show").options.length-1].selected) return;
+            for(var i=$("lst_show").options.length-1;i>-1;i++){
+                if($("lst_show").options[i].selected){
+                    $("div_preview").down(i);
+                    $("lst_show").insertBefore($("lst_show").options[i],$("lst_show").options[i+2]);
+                }
+            }
+        }
+        //项目上移
+        function upItem() {
+            if($("lst_show").options[0].selected) return;
+            for(var i=0;i<$("lst_show").options.length;i++){
+                if($("lst_show").options[i].selected){
+                    $("div_prevew").up(i);
+                    $("lst_show").insertBefore($("lst_show").options[i],$("lst_show").options[i-1]);
+                }
+            }
+        }
+        //初始化页面的所有事件
+        function initEvent() {
+            $("cmdAdd").onclick=addItem;
+            $("cmdDel").onclick=delItem;
+            $("cmdUp").onclick=upItem;
+            $("cmdDown").onclick=downItem;
+        }
+        //初始化列表
+        function initList() {
+            for(var i=0;i<navList.length;i+=2){
+                $("lst_hidden").options[$("lst_hidden").length]=new Option(navList[i],navList[i+1]);
+            }
+        }
+        //初始化预览栏
+        function initPreview() {
+            $("div_preview").add=function (text,url) {
+                var obj;
+                obj=document.createElement("A");
+                obj.innerHTML=text;
+                obj.href=url;
+                this.appendChild(obj);
+            }
+            $("div_preview").del=function (index) {
+                this.removeChild(this.childNodes[index]);
+            }
+            $("div_preview").up=function (index) {
+                this.insertBefore(this.childNodes[index],this.childNodes[index-1]);
+            }
+            $("div_preview").down=function (index) {
+                if(index+2>this.childNodes.length-1){
+                    this.appendChild(this.childNodes[index]);
+                } else{
+                    this.insertBefore(this.childNodes[index],this.childNodes[index+2]);
+                }
+            }
+        }
+        function $(str) {
+            return document.getElementById(str);
+        }
+        window.onload=function () {
+            initList();
+            initEvent();
+            initPreview();
+        }
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>隐藏的项目：</td><td></td>
+            <td>显示的项目：</td><td></td>
+        </tr>
+        <tr>
+            <td>
+                <select id="lst_hidden" size="10" multiple="true"></select>
+            </td>
+            <td valign="middle">
+                <input type="button" class="button01" value="-&gt;" title="添加" id="cmdAdd"/><br/>
+                <input type="button" class="button01" value="&lt;" title="删除" id="cmdDel"/>
+            </td>
+            <td>
+                <select id="lst_show" size="10" multuple="true"></select>
+            </td>
+            <td valign="middle">
+                <input type="button" class="button01" value="&#8593;" title="上移选中项目" id="cmdUp"/><br/>
+                <input type="button" class="button01" value="&#8595;" title="下移选中项目" id="cmdDown"/>
+            </td>
+        </tr>
+        <td colspan="4">
+            <fieldset>
+                <legend>效果预览</legend>
+                <div id="div_preview"></div>
+            </fieldset>
+        </td>
+    </table>
+</body>
+</html>
