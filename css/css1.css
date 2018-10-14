@@ -49,3 +49,10 @@ input{
     padding:0px 10px;
 
 }
+
+#tool{
+    background-color: buttonface;
+    border-bottom: 2px solid buttonface;
+    height: 24px;
+    line-height: ;
+}
