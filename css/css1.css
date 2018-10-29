@@ -43,20 +43,15 @@ input{
     overflow:hidden;
     border:1px solid black;
 }
-#mp div{
-    position:absolute;
-    width:220px;
-    padding:0px 10px;
+#mp div {
+    position: absolute;
+    width: 220px;
+    padding: 0px 10px;
 
 }
 
-<<<<<<< HEAD
-#tool{
-    background-color: buttonface;
-    border-bottom: 2px solid buttonface;
-    height: 24px;
-    line-height: ;
-=======
+
+
 #tools{
     background-color:buttonface;
     border-bottom: 2px solid buttonshadow;
@@ -79,5 +74,19 @@ input{
 }
 #huaita div{
     text-indent:2em;
->>>>>>> fae56a675491d8b6bdd2b3270bc3f3b7cd38f2bf
+
 }
+fieldset{
+    margin:10px;
+}
+a{
+    color:navy;
+}
+#d1,#d2{
+    margin:5px 10px;
+    padding:5px 15px;
+    background-color:white;
+    height:20px;
+}
+
+
