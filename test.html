@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <title>test</title>
     <script>
-       var color="blue";
-       function changecolor() {
-           if(color==="blue"){
-               color="red";
-           }else{
-               color="blue";
-           }
-       }
-       changecolor();
-       alert("color is now"+color);
+      function InitiateDrag() {
+          event.dataTransfer.setData("Text",$("oImage").src);
+      }
+      function FinishDrag() {
+          sImageURL=event.dataTransfer.getData("URL");
+          $("oTarget").innerHTML=sImageURL;
+      }
+      function $(str){
+          return document.getElementById((str))
+      }
     </script>
 </head>
 <body>

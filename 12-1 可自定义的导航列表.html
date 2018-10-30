@@ -15,7 +15,7 @@
         function addItem() {
             for(var i=0;i<$("lst_hidden").options.length;i++){
                 if($("lst_hidden").options[i].selected){
-                    $("div_preview").add($("lst_hidden").options[i].text/*,$("lst_hidden").options.value*/);
+                    $("div_preview").add($("lst_hidden").options[i].text,$("lst_hidden").options.value);
                     $("lst_show").appendChild($("lst_hidden").options[i]);
                     i--;
                 }
@@ -23,8 +23,9 @@
         }
         //删除项目
         function delItem() {
+
             for(var i=0;i<$("lst_show").options.length;i++){
-                if($(lst_show).options[i].selected){
+                if($("lst_show").options[i].selected){
                     $("div_preview").del(i);
                     $("lst_hidden").appendChild($("lst_show").options[i]);
                     i--;
