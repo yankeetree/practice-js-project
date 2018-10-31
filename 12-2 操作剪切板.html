@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>12-2 操作剪贴板</title>
+    <link type="text/css" rel="stylesheet" href="css/css1.css"/>
+    <script>
+        var lastURL;
+        function captureClipboard(){
+            var str=clipboardData.getData("Text");
+            if(str)if((/^http:\/\//i).test(str)&&lastURL!=str){
+                    lastURL = str;
+                    $("d2").innerHTML += str + "<br>";
+                }
+
+            
+        }
+        function doCopy() {
+            clipboarData.setData("Text",$("d1").innerHTML)
+        }
+        function $(str){
+            return document.getElementById(str);
+        }
+        window.onload=function () {
+            setInterval(captureClipboard,10);
+        }
+    </script>
+</head>
+<body>
+<p>
+    在下面连接上单击鼠标右键，选择“复制快捷方式”，页面会自动捕获复制的网址
+    网址捕获不仅可以获得本页中的剪贴板操作，也可以获得其他应用程序中该表的剪贴板操作。
+    <br/>
+    <a href="http://www.baidu.com">Baidu</a>
+</p>
+<fieldset>
+    <legend>监视剪贴板中的网址：</legend>
+    <div id="d2"></div>
+</fieldset>
+<fieldset>
+    <legend>
+        <a href="javascript:doCopy();void(0);">拷贝此处内容</a>
+    </legend>
+    <div id="d1">
+        腾讯体育记者都会发来的是福建省的海景房哈地方哈哈都是  姜思达换肤啊阿萨德大黄蜂
+        但京东方 案件都是废话了大姐夫爱是理解是否口打开啦
+    </div>
+</fieldset>
+</body>
+</html>

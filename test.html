@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>test</title>
     <script>
+<<<<<<< HEAD
       function InitiateDrag() {
           event.dataTransfer.setData("Text",$("oImage").src);
       }
@@ -14,6 +15,27 @@
       function $(str){
           return document.getElementById((str))
       }
+=======
+    var book= {
+        _year: 2004,
+        edition: 1,
+    }
+        Object.defineProperty(book,"year",{
+            get:function () {
+                return this.year;
+            },
+            set:function (newValue) {
+                if (newValue > 2004) {
+
+                this._year = newValue;
+                this.edition = newValue - 2004;
+            }
+            }
+        });
+    book.year=2006;
+    alert(book.edition);
+
+>>>>>>> 27b153ee9ca61af517b8910f0eac1862f1754c4a
     </script>
 </head>
 <body>
