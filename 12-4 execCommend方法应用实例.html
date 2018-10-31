@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>12-4 execcommend 方法应用实例</title>
+    <script type="text/javascript">
+        function selectAll() {
+            document.execCommand("SelectAll",false);
+        }
+        function saveAs() {
+            document.execCommand("SaveAs",true,"C:\\sample.htm");
+        }
+        function boldAll() {
+            document.execCommand("SelectAll",false);
+            document.execCommand("Bold",false);
+            document.execCommand("Unselect",false);
+        }
+        function print() {
+            document.execCommand("Print")
+        }
+    </script>
+</head>
+<body style="overflow: auto;padding:0px;margin:0px;">
+<div style="font-size:14px;color:white;font-family: Arial,宋体;background-color: #6090DA;
+padding:4px 10px;">
+    nihao
+    <script>
+        dt=new Date();
+        document.write(",当前的时间是");
+        document.write(dt.toLocaleTimeString());
+    </script>
+    <br/><br/>
+    <input type="button" value="全选" onclick="this.blur();selectAll()"/>
+    <input type="button" value="保存" onclick="this.blur();saveAs()"/>
+    <input type="button" value="加粗" onclick="this.blur();boldAll()"/>
+    <input type="button" value="打印" onclick="this.blur();print()"/>
+</div>
+
+</body>
+</html>
