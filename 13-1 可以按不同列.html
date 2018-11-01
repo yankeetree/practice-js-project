@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>13-1 可以按不同列排序，支持分页的表格</title>
+    <style>
+        {
+            font-size:12px;
+            font-family: 宋体,Arial;
+        }
+        body{
+            overflow: auto;
+        }
+        a{
+            margin:2px;
+            color:#BBBA9F;
+            font-weight:bold;
+        }
+        #hutia{
+            border-collapse: collapse;
+            border:1px solid black;
+        }
+        #hutia tr{
+            display:none;
+        }
+        #hutia td{
+            border:1px solid black;
+            padding:5px 15px;
+        }
+        #hutia th{
+            border:1px solid black;
+            padding:5px 15px;
+            cursor:pointer;
+        }
+        #nav_bar{
+            margin:10px;
+        }
+    </style>
+    <script>
+        var page_size,current_page,nav_len,last_sort_col;
+        function format_number(i,len) {
+            var pre=new Array(len-String(i).length+1);
+            pre=pre.join("0")
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>
