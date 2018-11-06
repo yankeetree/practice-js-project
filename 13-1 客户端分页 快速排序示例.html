@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>13-1 可以按不同列排序，支持分页的表格</title>
+    <style>
+        {
+            font-size:12px;
+            font-family: 宋体,Arial;
+        }
+        body{
+            overflow: auto;
+        }
+        a{
+            margin:2px;
+            color:#BBBA9F;
+            font-weight:bold;
+        }
+        #hutia{
+            border-collapse: collapse;
+            border:1px solid black;
+        }
+        #hutia tr{
+            display:none;
+        }
+        #hutia td{
+            border:1px solid black;
+            padding:5px 15px;
+        }
+        #hutia th{
+            border:1px solid black;
+            padding:5px 15px;
+            cursor:pointer;
+        }
+        #nav_bar{
+            margin:10px;
+        }
+    </style>
+    <script>
+        var page_size,current_page,nav_len,last_sort_col;
+        function format_number(i,len) {
+            var pre=new Array(len-String(i).length+1);
+            pre=pre.join("0");
+            return pre+i;
+        }
+        function hide(obj) {
+            obj.style.display="none";
+        }
+        function nav_first() {
+            showPage(0);
+        }
+        function nav_previous() {
+            showPage(current_page-1);
+        }
+        function nav_next() {
+            showPage(current_page+1)
+        }
+        function nav_last() {
+            showPage(parseInt($("hutia").rows.length/page_size)+1);
+        }
+        function quick_sort(ary) {
+            var ary1,ary2,mid,re;
+            if(ary.length<2){
+                return ary;
+            }else if(ary.length==2){
+                if(ary[0].key>ary[1].key){
+                    return ary.reverse();
+                }
+                return ary;
+            }else{
+                ary1=new Array();
+                ary2=new Array();
+                mid=ary[0];
+                for(var i=1;i<ary.length;i++){
+                    if(ary[i].key<mid.key){
+                        ary1.push(ary[i]);
+                    }else{
+                        ary2.push(ary[i]);
+                    }
+                }
+                return quick_sort(ary1).concat(mid,quick_sort(ary2));
+            }
+        }
+        
+        //刷新分页导航栏
+        function refresh_nav(pageNo,page_count) {
+            var str_nav,iStart,iEnd;
+            //刷新导航链接的可用性
+            if(pageNo==0){
+            $("nav0").disabled=$("nav1").disabled=true;
+            $("nav2").disabled=$("nav3").disabled=false;
+        } else if(pageNo==page_count-1){
+            $("nav0").disabled=$("nav1").disabled=false;
+            $("nav2").disabled=$("nav3").disabled=true;
+        }else{
+            $("nav0").disabled=$("nav1").disabled=false;
+            $("nav2").disabled=$("nav3").disabled=false;
+        }
+        //处理导航栏分页链接
+            str_nav="";
+            iStart=pageNo-nav_len/2+1>0?pageNo-nav_len/2+1:0;
+            if(iStart+nav_len-1>page_count&&page_count>nav_len-1){
+                iStart=page_count-nav_len+1;
+            }
+                iEnd=iStart+nav_len-1>page_count?page_count:iStart+nav_len-1;
+                    for(var i=iStart;i<iEnd;i++){
+                        str_nav+="<a href=\"#\" onclick='\"showPage("+i+");\"";
+                        str_nav+=(i==pageNo?"disabled":"")+">";
+                        str_nav+=(i+1)+"</a>";
+            }
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>
