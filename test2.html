@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    //定义两类型
+    function SuperType() {
+        this.property=true;
+    }
+    function SubType() {
+        this.subproperty=false;
+    }
+
+   //定义super原型方法，返回属性true
+    SuperType.prototype.getSuperValue=function () {
+        return this.property;
+    };
+    //定义sub原型方法，返回属性false
+    SubType.prototype.getSubValue=function () {
+        return this.subproperty;
+    };
+
+
+    //继承SuperType
+    SubType.prototype=new SuperType();
+
+   //创建sub的实例
+    var instance=new SubType();
+    //弹出实例的继承出来的super方法。
+    alert(instance.getSuperValue());
+</script>
+</body>
+</html>
