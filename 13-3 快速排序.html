@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>13-3 快速排序</title>
+    <style>
+        *{
+            font-size: 12px;
+            font-family:宋体,Arial;
+        }
+        body{
+            overflow:auto;
+        }
+    </style>
+    <script>
+        window.onload=function (){
+            var ary,st,re,timeCost;
+            timeCost=new Array();
+            ary=create_ordered_array(1000);
+            st=new Date();
+            re=sort(ary);
+            timeCost[0]=((new Date())-st);
+            ary=create_random_array(1000);
+            st=new Date();
+            re=sort(ary);
+            timeCost[1]=((new Date())-st);
+            alert(timeCost[0]+" 11"+timeCost[1]);
+        }
+        function create_random_array(len) {
+            var re=new Array(len);
+            for(var i=0;i<len;i++){
+                re[i]=Math.random();
+            }
+            return re;
+        }
+        function create_ordered_array(len) {
+            var re=new Array(len);
+            for(var i=0;i<len;i++){
+                re[i]=i;
+            }
+            return re;
+        }
+        function sort(ary) {
+            var len,ary1,ary2,mid,tmp;
+            len=ary.length;
+            if(len<3){
+                if(len==2&&ary[0]>ary[1]){
+                    tmp=ary[0];
+                    ary[0]=ary[1];
+                    ary[1]=tmp;
+                }
+                return ary;
+            }else{
+                mid=ary[0];
+                ary1=new Array();
+                ary2=new Array();
+                for(var i=1;i<len;i++){
+                    if(ary[i]<mid){
+                        ary1.push(ary[i]);
+                    }else{
+                        ary2.push(ary[i]);
+                    }
+                }
+                return sort(ary1).concat(mid,sort(ary2));
+            }
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>
